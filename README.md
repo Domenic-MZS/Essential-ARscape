@@ -1,3 +1,6 @@
+![Essential-ARscape Banner](https://github.com/Domenic-MZS/Essential-ARscape/assets/75044136/35a2762a-25b7-4b1f-9d20-683641fe12ba)
+
+
 # Essential-ARscape
 
 Welcome to Essential-ARscape, an open-source learning project documenting the journey through the immersive world of Augmented Reality (AR). This repository is a chronicle of my encounters, discoveries, experiments, and foundational learning experiences since my first dive into AR technology.

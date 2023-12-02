@@ -1,11 +1,11 @@
 # Extended Reality
 ## Table of Contents
-- [Definition](/docs/README.md#What%20really%20is%20the%20Extended%20Reality%20(XR)?)
-- [Importance](/docs/README.md#Why%20is%20it%20so%20important?)
-- [Types of Extended Reality](/docs/README.md#Types%20of%20Extended%20Reality)
+- [Definition](/docs/README.md#What-really-is-the-Extended-Reality-(XR)?)
+- [Importance](/docs/README.md#Why-is-it-so-important?)
+- [Types of Extended Reality](/docs/README.md#Types-of-Extended-Reality)
 - [Current State](</docs/README.md#Current XR State>)
-- [User Interaction](/docs/README.md#Extended%20Reality%20(XR)%20User%20Interaction)
-- [Business Applications](/docs/README.md#Extended%20Reality%20Applications%20for%20Business)
+- [User Interaction](/docs/README.md#Extended-Reality-(XR)-User-Interaction)
+- [Business Applications](/docs/README.md#Extended-Reality-Applications-for-Business)
 - [Challenges and Limitations](</docs/README.md#Current challenges and limitations of Extended Reality>)
 
 ### What really is the Extended Reality (XR)?
@@ -22,7 +22,7 @@ The areas of virtual reality and augmented reality are in constant growth being 
 - and many other applications...
 
 ## Why is it so important?
-The Extended Reality (XR) offers a more engaging and immersive experience, enabling users to interact with digital content in a natural and intuitive way. Allowing customization, and tailoring experiences to individual preferences or needs in a diverse set of [applications](/docs/README.md#Extended%20Reality%20Applications%20for%20Business).
+The Extended Reality (XR) offers a more engaging and immersive experience, enabling users to interact with digital content in a natural and intuitive way. Allowing customization, and tailoring experiences to individual preferences or needs in a diverse set of [applications](/docs/README.md#Extended-Reality-Applications-for-Business).
 
 Furthermore, as the XR technology evolves, it opens up possibilities for innovative applications yet to be explored, and combined with [artificial intelligence](https://www.ibm.com/topics/artificial-intelligence) and the [Internet of Things (Iot)](https://www.ibm.com/topics/internet-of-things) can revolutionize how we interact with technology.
 

@@ -1,12 +1,12 @@
 # Extended Reality
 ## Table of Contents
-- [Definition](/docs/README.md#What-really-is-the-Extended-Reality-(XR)?)
-- [Importance](/docs/README.md#Why-is-it-so-important?)
-- [Types of Extended Reality](/docs/README.md#Types-of-Extended-Reality)
-- [Current State](</docs/README.md#Current XR State>)
-- [User Interaction](/docs/README.md#Extended-Reality-(XR)-User-Interaction)
-- [Business Applications](/docs/README.md#Extended-Reality-Applications-for-Business)
-- [Challenges and Limitations](</docs/README.md#Current challenges and limitations of Extended Reality>)
+- [Definition](/docs/README.md#what-really-is-the-extended-reality-xr)
+- [Importance](/docs/README.md#why-is-it-so-important)
+- [Types of Extended Reality](/docs/README.md#types-of-extended-reality)
+- [Current State](/docs/README.md#current-xr-state)
+- [User Interaction](/docs/README.md#extended-reality-xr-user-interaction)
+- [Business Applications](/docs/README.md#extended-reality-applications-for-business)
+- [Challenges and Limitations](/docs/README.md#current-challenges-and-limitations-of-extended-reality)
 
 ### What really is the Extended Reality (XR)?
 Extended Reality is a catch-all "umbrella" term used to describe [immersive technologies](https://www.sciencedirect.com/topics/psychology/immersive-technology) that can merge the physical and virtual world, including [Augmented Reality (AR)](/docs/augmented-reality/README.md), [Virtual Reality (VR)](/docs/virtual-reality/README.md), and [Mixed Reality (MR)](/docs/mixed-reality/README.md) plus those that are still to be created. 
@@ -22,7 +22,7 @@ The areas of virtual reality and augmented reality are in constant growth being 
 - and many other applications...
 
 ## Why is it so important?
-The Extended Reality (XR) offers a more engaging and immersive experience, enabling users to interact with digital content in a natural and intuitive way. Allowing customization, and tailoring experiences to individual preferences or needs in a diverse set of [applications](/docs/README.md#Extended-Reality-Applications-for-Business).
+The Extended Reality (XR) offers a more engaging and immersive experience, enabling users to interact with digital content in a natural and intuitive way. Allowing customization, and tailoring experiences to individual preferences or needs in a diverse set of [applications](/docs/README.md#extended-reality-applications-for-business).
 
 Furthermore, as the XR technology evolves, it opens up possibilities for innovative applications yet to be explored, and combined with [artificial intelligence](https://www.ibm.com/topics/artificial-intelligence) and the [Internet of Things (Iot)](https://www.ibm.com/topics/internet-of-things) can revolutionize how we interact with technology.
 

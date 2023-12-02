@@ -21,7 +21,7 @@ The primary goal of Essential-ARscape is to provide a comprehensive resource for
 To start exploring Essential-ARscape:
 1. Clone or download the repository to your local machine.
 2. Navigate through the folders to access documentation, code samples, and tutorials.
-3. Check out the `README` files within specific folders for guidance on different topics. Like this [one](docs/README.md Reality>).
+3. Check out the `README` files within specific folders for guidance on different topics. Like this [one](/docs/README.md).
 4. Engage with the community by sharing your insights, asking questions, or contributing your own experiences.
 
 ## Contribution Guidelines

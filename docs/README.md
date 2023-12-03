@@ -38,13 +38,21 @@ It highly improves the [accessibility  for people with disabilities](https://xra
 
 ## Types of Extended Reality
 
-| Image | Description |
-|:--:|--|
-|![Augmented Reality\|300x200](/assets/augmented-reality.jpg)|[Augmented Reality or AR](/docs/augmented-reality/README.md) refers to a set of technologies that enable users to view part of the real world through a [technological device with added (virtual) graphical information](/docs/hardware.md) (like headsets and goggles). The device, overlays virtual information onto existing physical information, creating a fusion where virtual elements appear within reality. Tangible physical elements blend with virtual elements, resulting in a real-time augmented experience.|
-|![Virtual Reality\|300x200](/assets/virtual-reality.png) |[Virtual Reality or VR](/docs/virtual-reality/README.md) is a computer-generated simulation of an environment that enables users to interact and immerse themselves in a realistic like three-dimensional environment through the use of specialized wearable equipment, such as headsets, haptic suits and other trackers. It typically involves sensory experiences, including visual, auditory, and sometimes tactile feedback, to create the illusion of presence in a virtual world that can be explored and manipulated.|
-|![Mixed Reality\|300x200](/assets/mixed-reality.png) |[Mixed Reality (MR)](/docs/mixed-reality/README.md) merges elements of both [augmented reality (AR)](/docs/augmented-reality/README.md) and [virtual reality (VR)](/docs/virtual-reality/README.md) to create environments where physical and digital objects coexist and interact which each other in real time, blending the physical and virtual "worlds", offering a spectrum where digital and real-world elements can coexist and interact in a seamless and interactive manner [(Holographic/Immersive)](/docs/mixed-reality/README.md).|
+<img alt="Augmented Reality" width="300"  height="200" src="/assets/augmented-reality.jpg" align="left">
 
+[Augmented Reality or AR](/docs/augmented-reality/README.md) refers to a set of technologies that enable users to view part of the real world through a [technological device with added (virtual) graphical information](/docs/hardware.md) (like headsets and goggles). The device, overlays virtual information onto existing physical information, creating a fusion where virtual elements appear within reality. Tangible physical elements blend with virtual elements, resulting in a real-time augmented experience.
 
+<br><br>
+<img alt="Virtual Reality" width="300" height="200" src="/assets/virtual-reality.png" align="left">
+
+[Virtual Reality or VR](/docs/virtual-reality/README.md) is a computer-generated simulation of an environment that enables users to interact and immerse themselves in a realistic like three-dimensional environment through the use of specialized wearable equipment, such as headsets, haptic suits and other trackers. It typically involves sensory experiences, including visual, auditory, and sometimes tactile feedback, to create the illusion of presence in a virtual world that can be explored and manipulated.
+
+<br><br>
+<img alt="Mixed Reality" width="300" height="200" src="/assets/mixed-reality.png" align="left"> 
+
+[Mixed Reality (MR)](/docs/mixed-reality/README.md) merges elements of both [augmented reality (AR)](/docs/augmented-reality/README.md) and [virtual reality (VR)](/docs/virtual-reality/README.md) to create environments where physical and digital objects coexist and interact which each other in real time, blending the physical and virtual "worlds", offering a spectrum where digital and real-world elements can coexist and interact in a seamless and interactive manner [(Holographic/Immersive)](/docs/mixed-reality/README.md).|
+
+<br><br>
 >[!tip] 
 > **Wrapping Up - The differences in a nutshell**
 > - *Augmented Reality (AR)*: Pass-through vision with the "real world" on the background, has "virtual" overlays on top of it. It could be interactive (tap in device).
@@ -149,4 +157,4 @@ There are several health concerns are in consideration regarding XR usage. These
 
 And there's no clear standards addressing the [accessibility of augmented reality technologies](/docs/accesibility/README.md) for people with disabilities. However, it's being [worked on](https://xraccess.org/) right now.
 
-	Taking periodic breaks to socialize and rest is a viable solution to XR exhaustion. Hardware comfort and warnings directed at the user can also significantly improve user experience.
+> Taking periodic breaks to socialize and rest is a viable solution to XR exhaustion. Hardware comfort and warnings directed at the user can also significantly improve user experience.

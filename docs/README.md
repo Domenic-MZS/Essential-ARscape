@@ -28,10 +28,10 @@ Furthermore, as the XR technology evolves, it opens up possibilities for innovat
 
 It highly improves the [accessibility  for people with disabilities](https://xraccess.org/), offering new ways to interact with the world, and it has the potential to connect people globally in more immersive ways, transcending the physical boundaries.
 
-✅  Enhances the employees training outcomes (soft and hard skills)
-✅  Reduce costs by increasing efficiency in operations
-✅  Improves and modernizes the customers experience
-✅  Increases the brand status from the competency
+- ✅  Enhances the employees training outcomes (soft and hard skills)
+- ✅  Reduce costs by increasing efficiency in operations
+- ✅  Improves and modernizes the customers experience
+- ✅  Increases the brand status from the competency
 
 > [!tip]
 > Overall, XR's importance lies in its ability to transform various industries, enhance user experiences, and pave the way for innovative advancements in technology and human interaction.

@@ -14,8 +14,8 @@ echo "Validating links format..."
 tmp_file="$(mktemp -p "$PWD")"
 grep -Hn \
   -R \
-  -E '(\[[^\)]+\]\([^\)]+#[^\)]+)%20([^\)]+)' \
-  **/*.md 
+  -E '\[[^]]+\]\([^)#]+#[^)]+%20[^)]+\)' \
+  **/*.md *.md 
 
 while IFS=  read -r REPLY; do
     has_error=1
@@ -23,4 +23,4 @@ while IFS=  read -r REPLY; do
 done < "$tmp_file"
 
 rm -f "$tmp_file"
-exit 0
+exit has_error

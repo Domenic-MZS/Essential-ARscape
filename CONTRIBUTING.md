@@ -37,23 +37,30 @@ If you're new to contributing to open-source projects, don't worry! Here's how y
 
 ### Code Style and Standards
 
-- Follow consistent code formatting as per the language or framework used.
-- Comment your code appropriately to enhance readability.
-- Ensure your code additions align with the project's focus on AR learning.
-- Add Markdown files explaining the procedure and functionality of the sample 
+- Follow consistent code formatting as per the language or framework used if it's a code demo.
+- Comment your code appropriately to enhance readability  and don't add too many comments neither.
+- Ensure your code additions align with the project's focus on [Extended Reality](README.md) learning.
+- Add Markdown files explaining the procedure and functionality of the sample.
+- Always add a `README` file explaining and guiding the feature or theme.
+- File names should only contain alphanumerics with underscores or hyphens like: `[a-zA-Z_-]`
+- The file extensions `.h` and `.u` are reserved for `README`'s and `Snake_Case files` only.
+- Links and src objects (`<## src="" />`) should always be in `[]()`  or `src="/relative-path"` and sections link should always use the GitHub standard `#section-header`. See more [here](/Styles-Guidelines.md).
 
 ### Documentation and Content
 
 - Use clear and concise language in documentation and tutorials.
+- If possible always add a `Table of Contents`.
 - Provide examples or visual aids where necessary to enhance understanding.
 - Ensure information is accurate and up-to-date.
-- Add references and links to important datasources that backups the logic or sample (that are useful, if needed). 
+- Add references and links to important datasources that backups the logic or sample (that are useful, if needed).
+- Add references to local resources even if there don't exist yet. (*)
 
 ### Pull Request Guidelines
-
-- Create descriptive and concise pull requests detailing the purpose of your changes.
-- Reference any related issues or provide context for the changes made.
+- Verify that your Pull Request is Up to Date with the `main` branch. - Create descriptive and concise pull requests detailing the purpose of your changes. - Reference any related issues or provide context for the changes made.
 - Be open to feedback and willing to make revisions if necessary.
+- Ensure your commits follows the [Conventional Commit Guidelines](https://www.conventionalcommits.org/en/v1.0.0/).
+- Add or modify test files if needed. 
+- Ensure the changes are [GitHub compliant](Styles-Guidelines.md).
 
 ### Code of Conduct
 
@@ -62,9 +69,11 @@ Please adhere to the [Code of Conduct](CODE_OF_CONDUCT.md) throughout your inter
 ## How to Submit Contributions
 
 1. **Create** a new branch in your forked repository (e.g., `feature/add-tutorial`).
-2. **Commit** your changes to that branch.
-3. **Push** your changes to your forked repository.
-4. **Open** a Pull Request against the `main` branch of the Essential-ARscape repository.
+2. **Commit** your changes following the [conventional commit guidelines](https://www.conventionalcommits.org/en/v1.0.0/) to that branch.
+3. **Convert and Test** your changes if needed.
+4. **Push** your changes to your forked repository.
+5. **Open** a Pull Request against the `main` branch of the Essential-ARscape repository.
+6. **Document** your Pull Request with your changes explaining what was added, what it does and how it can be tested.
 
 ## Help and Support
 

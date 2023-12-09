@@ -22,6 +22,11 @@ find "." \
 
 while IFS=  read -r 'folder'; do
   # Check if every folder has a README.md file
+  if [ -f "$folder/.lava" ]; then
+    echo "INFO: $folder/.lava file found, it's hot! skipping"
+    continue
+  fi
+
   if [ ! -f "$folder/README.md" ]; then
     echo "ERROR: $folder/README.md does not exist"
     has_error=1

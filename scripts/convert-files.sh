@@ -99,11 +99,15 @@ function deobsidianize(){
 current_dir=$(dirname "$(readlink -f "$0")")
 root_project="${current_dir%/*}"
 
-echo "Choose an option"
-echo "1. Convert files to Obsidian"
-echo "2. Convert files to Markdown"
+choice=${1:-}
 
-read -p "Enter your choice: " choice
+if [[ -z $choice ]]; then
+  echo "Choose an option"
+  echo "1. Convert files to Obsidian"
+  echo "2. Convert files to Markdown"
+
+  read -p "Enter your choice: " choice
+fi
 
 case $choice in
   1)

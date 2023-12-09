@@ -4,12 +4,15 @@
 current_dir=$(dirname "$(readlink -f "$0")")
 root_project="${current_dir}/../"
 
+choice=${1:-}
 
-echo "Choose an option:"
-echo "1. Convert to Obsidian"
-echo "2. Convert to Markdown"
+if [ -z "$choice" ]; then
+  echo "Choose an option:"
+  echo "1. Convert to Obsidian"
+  echo "2. Convert to Markdown"
 
-read -p "Enter your choice (1 or 2): " choice
+  read -p "Enter your choice (1 or 2): " choice
+fi
 
 case $choice in
     1)

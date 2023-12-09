@@ -35,7 +35,7 @@ case $choice in
         # fix img src="" links by removing file path to project file://...
         echo "Converting Obsidian absolute src to Markdown local src..."
         root_path=$(echo "$root_project" | sed 's/[^^]/[&]/g; s/\^/\\^/g')
-        find "$root_project" -type f -name "*.md" -exec sed -i -E "s#(src=[\"'])file://$root_path#\1/#g" {} +
+        find "$root_project" -type f -name "*.md" -exec sed -i -E "s#(src=[\"'])file://$root_path#\1/#gI" {} +
         ;;
     *)
         echo "Invalid choice. Please enter 1 or 2."

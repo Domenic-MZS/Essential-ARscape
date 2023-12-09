@@ -13,7 +13,7 @@ replace_links() {
     -name "*.md" \
     -not -path '*/\.*/*' \
     -print0 \
-    | xargs -0 sed -i "s/$(echo "$1" | sed 's/\s/%20/g')/$(echo "$2" | sed 's/\s/%20/g')/g"
+    | xargs -0 sed -i "s/$(echo "$1" | sed 's/\s/%20/gI')/$(echo "$2" | sed 's/\s/%20/g')/gI"
 }
 
 # Convert all markdown files to Obsidian format 
@@ -29,7 +29,7 @@ obsidianize() {
 
   # Replace README.md with first # heading in file; 
   if [ $file_name = "README.md" ]; then
-    heading=$(sed -En 's/(^|[[:space:]]+)#\s//p' "$file")
+    heading=$(sed -En '1s/(^|[[:space:]]+)#\s//p' "$file")
 
     # we use a prefix .h to indicate that this 
     # is a heading file and not a note file for Obsidian

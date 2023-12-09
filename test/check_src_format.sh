@@ -1,5 +1,4 @@
 #!/bin/sh
-#
 # This script validates source links composition
 
 # Get into the project root folder
@@ -8,13 +7,20 @@ cd $project_root
 cd ..
 
 # Check source format
+echo "Checking source format..."
 has_error=0
 
-echo "Checking source format..."
+tmp_file="$(mktemp -p "$PWD")"
+grep -Hn \
+  -R \
+  -E "src=[\"']file://" \
+  **/*.md > "${tmp_file}"
 
-while IFS=  read -r; do
+while IFS=  read -r 'REPLY'; do
     echo Error: $REPLY
     has_error=1
-done < <(grep -Hn -R -E "src=[\"']file://" **/*.md)
+done < "$tmp_file"
+
+rm -f "$tmp_file"
 
 exit $has_error

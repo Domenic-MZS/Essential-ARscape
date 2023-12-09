@@ -8,33 +8,30 @@ cd "$(dirname "$0")"
 cd ..
 
 echo "Testing files structure...";
+has_error=0
 
 # Get all folders
-files=()
-while IFS= read -r -d $'\0'; do
-  files+=("$REPLY")
-done < <(find "." \
+tmp_file="$(mktemp -p "$PWD")"
+find "." \
   -type f \
   -not -path '*/.*' \
   -not -path '*/test*' \
   -not -path '*/assets*' \
   -not -path '*/scripts*' \
-  -print0\
-)
+  -print > "${tmp_file}"
 
-echo "Found ${#files[@]} files. Testing naming convention..."
-
-# Check if every file has the proper name convention
-has_error=0
-for file in ${files[@]}; do
+while IFS= read -r 'file'; do
+  # Check if every file has the proper name convention
   # allowed characters are [a-zA-Z0-9_-]
   name_only=$(basename "$file")
   name_only=${name_only%.*}
 
-  if [[ $name_only =~ [^a-zA-Z0-9_-] ]]; then
+  if echo "$name_only" | grep -q '[^a-zA-Z0-9_-]'; then
     echo "File '$file' is not following the file convention. [a-zA-Z0-9_-]";
     has_error=1
   fi
-done
+done < "$tmp_file"
+
+rm -f "$tmp_file"
 
 exit $has_error

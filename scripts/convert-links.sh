@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Get the directory of the current script
 current_dir=$(dirname "$(readlink -f "$0")")
@@ -11,7 +12,8 @@ if [ -z "$choice" ]; then
   echo "1. Convert to Obsidian"
   echo "2. Convert to Markdown"
 
-  read -p "Enter your choice (1 or 2): " choice
+  printf "Enter your choice (1 or 2): "
+  read -r choice;
 fi
 
 case $choice in
@@ -22,7 +24,7 @@ case $choice in
 
         # fix img src="" links by adding file path to project file://...
         echo "Converting Markdown local src to Obsidian absolute src..."
-        root_path=$(sed 's/[&/\]/\\&/g' <<<"$root_project")
+        root_path=$(echo "$root_project" | sed 's/[&/\]/\\&/g')
         find "$root_project" -type f -name "*.md" -exec sed -i -E "s#(src=[\"'])/#\1file://$root_path#g" {} +
         ;;
     2)
@@ -32,7 +34,7 @@ case $choice in
 
         # fix img src="" links by removing file path to project file://...
         echo "Converting Obsidian absolute src to Markdown local src..."
-        root_path=$(sed 's/[^^]/[&]/g; s/\^/\\^/g' <<<"$root_project")
+        root_path=$(echo "$root_project" | sed 's/[^^]/[&]/g; s/\^/\\^/g')
         find "$root_project" -type f -name "*.md" -exec sed -i -E "s#(src=[\"'])file://$root_path#\1/#g" {} +
         ;;
     *)

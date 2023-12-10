@@ -52,15 +52,6 @@ replace_links() {
     rm -rf "$tmp_links"
   done < "$tmp_file"
   rm -rf "$tmp_file"
-  # escaped_file_name=$(echo "$1" | sed 's#[^^]#[&]#g; s#\^#\\^#g')
-  # escaped_heading=$(echo "$2" | sed 's#[\&]#\\&#g')
-  #
-  # find "$root_project" \
-  #   -type f \
-  #   -name "*.md" \
-  #   -not -path '*/\.*/*' \
-  #   -print0 \
-  #   | xargs -0 sed -i "s/$(echo "$1" | sed 's/\s/%20/gI')/$(echo "$2" | sed 's/\s/%20/g')/gI"
 }
 
 # Convert all markdown files to Obsidian format 

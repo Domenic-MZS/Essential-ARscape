@@ -20,7 +20,7 @@ case $choice in
     1)
         # fix markdown []() links by replacing - with %20
         echo "Converting Markdown links to Obsidian links..."
-        find "$root_project" -type f -name "*.md" -exec sed -i -E ':a;s/(\[[^\)]+\]\([^\)]+#[^\)]+)-([^\)]+)/\1%20\2/;ta' {} +
+        find "$root_project" -type f -name "*.md" -exec sed -i -E ':a;s/(\[[^]]+|\][^(]+)(\]\([^#)]+)([^-)]+)-([^)]+)/\1\2\3%20\4/gI;ta;'  {} +
 
         # fix img src="" links by adding file path to project file://...
         echo "Converting Markdown local src to Obsidian absolute src..."
@@ -30,7 +30,7 @@ case $choice in
     2)
         # fix markdown []() links by replacing %20 with -
         echo "Converting Obsidian links to Markdown links..."
-        find "$root_project" -type f -name "*.md" -exec sed -i -E ':a;s/(\[[^\)]+\]\([^\)]+#[^\)]+)%20([^\)]+)/\1-\2/;ta' {} +
+        find "$root_project" -type f -name "*.md" -exec sed -i -E ':a;s/(\[[^]]+|\][^(]+)(\]\([^#)]+)([^%)]+|%[^2)][^0)])%20([^)]+)/\1\2\3-\4/gI;ta;' {} +
 
         # fix img src="" links by removing file path to project file://...
         echo "Converting Obsidian absolute src to Markdown local src..."

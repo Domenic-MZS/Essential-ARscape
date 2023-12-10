@@ -29,7 +29,7 @@ obsidianize() {
 
   # Replace README.md with first # heading in file; 
   if [ $file_name = "README.md" ]; then
-    heading=$(sed -En '1s/(^|[[:space:]]+)#\s//p' "$file")
+    heading=$(sed -En '1,/#/ s/(^|[[:space:]]+)#\s//p' "$file")
 
     # we use a prefix .h to indicate that this 
     # is a heading file and not a note file for Obsidian

@@ -23,4 +23,4 @@ while IFS=  read -r REPLY; do
 done < "$tmp_file"
 
 rm -f "$tmp_file"
-exit has_error
+exit $has_error

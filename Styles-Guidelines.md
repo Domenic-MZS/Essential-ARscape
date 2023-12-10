@@ -4,7 +4,7 @@ To start contributing to Essential-ARscape, you need to follow defined style pra
 
 ## Table of Contents
 1. [GitHub Compliant Elements](/Styles-Guidelines.md#GitHub-compliant-elements)
-2. [File Tree Requirements (FTR)](/Styles%20Guidelines#file%20tree%20requirements%20ftr)
+2. [File Tree Requirements (FTR)](/Styles-Guidelines#file-tree-requirements-ftr)
 3. [How to Link Files Together](/Styles-Guidelines.md#how-to-link-files-together)
 4. [Working with Obsidian](/Styles-Guidelines.md#working-with-obsidian)
     1. [Convert GitHub to Obsidian](/Styles-Guidelines.md#convert-github-to-obsidian)
@@ -58,7 +58,7 @@ Files with spaces must be URL-encoded with `%20`. For example, a file named `sur
 ### Working with Obsidian
 [Obsidian](https://obsidian.md/) is a note-taking software and personal knowledge base that operates with Markdown files. It enables creating links between notes and visualizes connections in a graph format, aiding in organizing and structuring ideas and knowledge creatively.
 
-When running the project with `Obsidian`, the [File Tree Requirements (FTR)](/Styles%20Guidelines#file%20tree%20requirements%20ftr) and [links format](/Styles-Guidelines.md#GitHub-compliant-elements) are not enforced due to compatibility issues. More differences are detailed [here](/Styles-Guidelines.md#obsidian-files). 
+When running the project with `Obsidian`, the [File Tree Requirements (FTR)](/Styles-Guidelines#file-tree-requirements-ftr) and [links format](/Styles-Guidelines.md#GitHub-compliant-elements) are not enforced due to compatibility issues. More differences are detailed [here](/Styles-Guidelines.md#obsidian-files). 
 
 #### Convert GitHub to Obsidian
 To leverage [Obsidian's](https://obsidian.md/) advantages, addressing compatibility issues is necessary due to discrepancies in Markdown rendering between `GitHub` and `Obsidian`. For instance, `GitHub` uses hyphens to represent heading spaces, while `Obsidian` employs URL-encoded spaces. How can you run an [Obsidian vault](https://notes.nicolevanderhoeven.com/obsidian-playbook/Using+Obsidian/01+First+steps+with+Obsidian/Opening+a+folder+as+a+vault) here?
@@ -88,7 +88,7 @@ This action reverts filenames to their original state and applies the [FTR](/Sty
 > In such cases, manual fixing is required. Feedback on the exact lines can be obtained by [running the test files](/Styles-Guidelines.md#running-tests).
 
 ### Obsidian Files
-When operating the [converted workspace](/Styles-Guidelines.md#convert-github-to-obsidian) with `Obsidian`, configuration files are exempt from the [FTR](/Styles%20Guidelines#file-tree-requirements-ftr) requirements, allowing filenames to have spaces instead of underscores or hyphens:
+When operating the [converted workspace](/Styles-Guidelines.md#convert-github-to-obsidian) with `Obsidian`, configuration files are exempt from the [FTR](/Styles-Guidelines#file-tree-requirements-ftr) requirements, allowing filenames to have spaces instead of underscores or hyphens:
 
 > [!NOTE]
 Reserved words should be used if necessary.
@@ -139,7 +139,7 @@ To run `Essential-ARscape` markdown validation tests, ensure you have the requir
 2. Common packages like `make`, `grep`, `find`, and `sed`
 
 Available test files include:
- - `check_file_names`: Ensures all filenames adhere to the [FTR](/Styles%20Guidelines#file-tree-requirements-ftr) ruleset.
+ - `check_file_names`: Ensures all filenames adhere to the [FTR](/Styles-Guidelines#file-tree-requirements-ftr) ruleset.
  - `check_links_format`: Ensures all links follow the correct Markdown format.
  - `check_readme_presence`: Ensures all folders contain the required `README` file.
  - `check_src_format`: Ensures all files have the correct `src` path.

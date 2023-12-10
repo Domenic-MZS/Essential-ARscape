@@ -1,19 +1,66 @@
 #!/bin/sh
-set -e
 
 # Replace all links to a file with a new name
 # $1: file name to replace
 # $2: new file name
 replace_links() {
-  escaped_file_name=$(echo "$1" | sed 's#[^^]#[&]#g; s#\^#\\^#g')
-  escaped_heading=$(echo "$2" | sed 's#[\&]#\\&#g')
+  tmp_file="$(mktemp -p "$PWD")"
 
-  find "$root_project" \
+  find "." \
     -type f \
     -name "*.md" \
     -not -path '*/\.*/*' \
-    -print0 \
-    | xargs -0 sed -i "s/$(echo "$1" | sed 's/\s/%20/gI')/$(echo "$2" | sed 's/\s/%20/g')/gI"
+    -print > "$tmp_file"
+
+  while IFS=  read -r 'file'; do
+    echo "[!] Updating links for $file..."
+    
+    tmp_links="$(mktemp -p "$PWD")"
+    grep -Eo '[^!]\[[^]]+\]\([^)]+\)' "$file" > "$tmp_links"
+
+    while IFS=  read -r 'link'; do
+      link="${link%)}"
+      link="${link#*](}"
+      raw_link="$link"
+
+      if echo "$link" | grep -q "^/"; then
+        link="${PWD}${link}" # scope del root
+      elif echo "$link" | grep -q "^."; then
+        link="${file%/*}/${link}" # scope del file
+      else
+        continue # not local
+      fi
+
+      link="$(readlink -f "$link")"
+      link="$(dirname "$link")"
+
+      if [ "$link" != "$(readlink -f "$1")" ]; then
+        continue # not the same file
+      fi
+
+      encoded_search="$(echo "$raw_link" | sed 's/\s/%20/g ; s/[^^]/[&]/g ; s/\^/\\^/g')"
+      
+      # el name del raw link se remplaza con el rename para encodear
+      encoded_search_name="$(echo "$2" | sed 's/\s/%20/g;s/[^^]/[&]/g;s/\^/\\^/g')"
+      encoded_replace_rename="$(echo "$3" | sed 's/[\&/]/\\&/g;s/\s/%20/g')"
+
+      new_link="$(echo "$raw_link" | sed "s/$encoded_search_name/$encoded_replace_rename/g")"
+
+      encoded_replace_new_link="$(echo "$new_link" | sed 's/[\&/]/\\&/g')"
+      sed -i -E "s/$encoded_search/$encoded_replace_new_link/g" "$file"
+    done < "$tmp_links"
+    rm -rf "$tmp_links"
+  done < "$tmp_file"
+  rm -rf "$tmp_file"
+  # escaped_file_name=$(echo "$1" | sed 's#[^^]#[&]#g; s#\^#\\^#g')
+  # escaped_heading=$(echo "$2" | sed 's#[\&]#\\&#g')
+  #
+  # find "$root_project" \
+  #   -type f \
+  #   -name "*.md" \
+  #   -not -path '*/\.*/*' \
+  #   -print0 \
+  #   | xargs -0 sed -i "s/$(echo "$1" | sed 's/\s/%20/gI')/$(echo "$2" | sed 's/\s/%20/g')/gI"
 }
 
 # Convert all markdown files to Obsidian format 
@@ -22,7 +69,8 @@ replace_links() {
 obsidianize() {
   # Get the file original name
   file="$1" # file to convert
-  file_name=$(basename -- "$file")
+  file_dir="$(dirname -- "$file")"
+  file_name="$(basename -- "$file")"
   heading= # new heading of the file
 
   echo "[?] Converting $file_name..."
@@ -56,7 +104,7 @@ obsidianize() {
 
     # Update links in all files
     echo "[!] Updating links..."
-    replace_links "$file_name" "$heading"
+    replace_links "$file_dir" "$file_name" "$heading"
   fi
 }
 
@@ -64,6 +112,7 @@ obsidianize() {
 deobsidianize(){
   # Get the file original name
   file="$1"
+  file_dir="$(dirname -- "$file")"
   file_name=$(basename -- "$file")
   heading=$file_name # starting point
   echo "[?] Converting $file_name..."
@@ -89,7 +138,7 @@ deobsidianize(){
 
     # Update links in all files
     echo "[!] Updating links..."
-    replace_links "$file_name" "$heading"
+    replace_links "$file_dir" "$file_name" "$heading"
   fi
 }
 

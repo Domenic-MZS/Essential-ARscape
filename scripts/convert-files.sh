@@ -28,7 +28,7 @@ obsidianize() {
   echo "[?] Converting $file_name..."
 
   # Replace README.md with first # heading in file; 
-  if [ $file_name = "README.md" ]; then
+  if [ "$file_name" = "README.md" ]; then
     heading=$(sed -En '1,/#/ s/(^|[[:space:]]+)#\s//p' "$file")
 
     # we use a prefix .h to indicate that this 

@@ -6,17 +6,21 @@
 replace_links() {
   tmp_file="$(mktemp -p "$PWD")"
 
-  find "." \
-    -type f \
-    -name "*.md" \
-    -not -path '*/\.*/*' \
-    -print > "$tmp_file"
+  encoded_search_name="$(echo "$2" | sed 's/\s/%20/g;s/[^^]/[&]/g;s/\^/\\^/g')"
+  encoded_replace_rename="$(echo "$3" | sed 's/[\&/]/\\&/g;s/\s/%20/g')"
+  resolved_dir="$(readlink -f "$1")"
+
+  grep --include '*.md' \
+    --exclude-dir '.[^.]*' \
+    -lRE "$encoded_search_name" \
+    '.' > "$tmp_file"
 
   while IFS=  read -r 'file'; do
     echo "[!] Updating links for $file..."
     
     tmp_links="$(mktemp -p "$PWD")"
     grep -Eo '[^!]\[[^]]+\]\([^)]+\)' "$file" > "$tmp_links"
+    uniq -u "$tmp_links" > "$tmp_links"
 
     while IFS=  read -r 'link'; do
       link="${link%)}"
@@ -24,9 +28,9 @@ replace_links() {
       raw_link="$link"
 
       if echo "$link" | grep -q "^/"; then
-        link="${PWD}${link}" # scope del root
-      elif echo "$link" | grep -q "^."; then
-        link="${file%/*}/${link}" # scope del file
+        link="${PWD}${link}" # root scope
+      elif echo "$link" | grep -q "^.|[^h][^t][^t][^p][^:]|[^f][^t][^p][^:]"; then
+        link="${file%/*}/${link}" # local scope
       else
         continue # not local
       fi
@@ -34,22 +38,19 @@ replace_links() {
       link="$(readlink -f "$link")"
       link="$(dirname "$link")"
 
-      if [ "$link" != "$(readlink -f "$1")" ]; then
+      if [ "$link" != "$resolved_dir" ]; then
         continue # not the same file
       fi
 
       encoded_search="$(echo "$raw_link" | sed 's/\s/%20/g ; s/[^^]/[&]/g ; s/\^/\\^/g')"
-      
-      # el name del raw link se remplaza con el rename para encodear
-      encoded_search_name="$(echo "$2" | sed 's/\s/%20/g;s/[^^]/[&]/g;s/\^/\\^/g')"
-      encoded_replace_rename="$(echo "$3" | sed 's/[\&/]/\\&/g;s/\s/%20/g')"
-
       new_link="$(echo "$raw_link" | sed "s/$encoded_search_name/$encoded_replace_rename/g")"
-
       encoded_replace_new_link="$(echo "$new_link" | sed 's/[\&/]/\\&/g')"
+
       sed -i -E "s/$encoded_search/$encoded_replace_new_link/g" "$file"
+
     done < "$tmp_links"
     rm -rf "$tmp_links"
+
   done < "$tmp_file"
   rm -rf "$tmp_file"
 }
